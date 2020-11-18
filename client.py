@@ -1,7 +1,7 @@
 from socket import AF_INET, socket, SOCK_STREAM
 from threading import Thread
 
-
+#Função que irá receber continuamente as mensagens enviadas pelo servidor
 def receive():
     while True:
         try:
@@ -11,7 +11,7 @@ def receive():
             exit()
             break
 
-
+#Função que irá enviar as mensagens do cliente ao servidor
 def send(event=None):
     msg = input()
     client_socket.send(bytes(msg, "utf8"))
@@ -21,13 +21,16 @@ def send(event=None):
     else:
         send()
 
+#Entradas para determinar o ip e porta do servidor
 HOST = input('Enter host: ')
 PORT = input('Enter port: ')
+
 if not PORT:
     PORT = 33000
 else:
     PORT = int(PORT)
 
+#Definindo algumas constantes que serão usadas ao longo do desenvolvimento do cliente
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
