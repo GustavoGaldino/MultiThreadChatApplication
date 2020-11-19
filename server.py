@@ -128,7 +128,7 @@ def broadcast(msg, prefixo=""):
 clientes = {}
 
 HOST = ''
-PORT = 32000
+PORT = 33000
 BUFSIZ = 1024
 ADDR = (HOST, PORT)
 
